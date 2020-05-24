@@ -19,18 +19,23 @@ class Stack:
     def __init__(self):
         self.size = 0
         # self.storage = ?
+        # set to DLL
         self.storage = DoublyLinkedList()
 
     def __len__(self):
+        # return length of what is stored in DLL
         return len(self.storage)
 
     def push(self, value):
+        # increase and add end
         self.storage.add_to_tail(value)
         self.size += 1
 
     def pop(self):
+        # check if empty
         if self.size == 0:
             return None
-        self.size -= 1
+        # decrease and remove from end
         del_value = self.storage.remove_from_tail()
+        self.size -= 1
         return del_value

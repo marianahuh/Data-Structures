@@ -22,6 +22,7 @@ class Queue:
     def __init__(self):
         self.size = 0
         # self.storage = ?
+        # set to an DLL
         self.storage = DoublyLinkedList()
 
     def __len__(self):
@@ -33,6 +34,7 @@ class Queue:
         self.storage.add_to_tail(value)
 
     def dequeue(self):
+        # check if empty
         if self.size == 0:
             return None
         else:
